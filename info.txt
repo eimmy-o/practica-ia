@@ -1,0 +1,199 @@
+prompt: 
+Crea una página web completa desde cero sobre una cafetería artesanal, usando solo HTML, CSS (en archivo externo) y JavaScript (en archivo externo).
+Explica la estructura del proyecto y qué hace cada archivo.
+Agrega una interacción simple con JavaScript (por ejemplo, un botón que cambie el color de fondo del sitio).
+Selecciona una paleta de colores y fuente que combinen con el tema de una cafetería.
+
+Respuesta: 
+
+Aquí tienes una propuesta completa para una página web sencilla de una cafetería artesanal, usando solo archivos HTML, CSS y JavaScript externos, junto con una explicación de la estructura del proyecto y cómo ejecutarlo en un navegador.
+
+Estructura del Proyecto
+El proyecto consta de tres archivos principales:
+
+index.html: El archivo HTML que define la estructura y el contenido de la página web.
+
+style.css: El archivo CSS externo donde se define el diseño, los colores, la fuente y el aspecto visual general.
+
+script.js: El archivo JavaScript externo para añadir interactividad, como cambiar el color de fondo al hacer clic en un botón.
+
+La estructura de carpetas recomendada:
+
+text
+cafeteria-artesanal/
+│
+├── index.html
+├── style.css
+└── script.js
+Paleta de Colores y Fuente
+Para evocar el ambiente acogedor de una cafetería artesanal:
+
+Marrón oscuro (#5A3A1B): Marrón café
+
+Beige claro (#F5EFE6): Fondo cálido
+
+Verde olivo (#A3A847): Toques naturales
+
+Blanco puro (#FFFFFF): Para contraste
+
+Fuente: 'Bitter', serif; (disponible desde Google Fonts, ideal para cafetería artesanal)
+
+Código de los Archivos
+index.html
+xml
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Artesanal Aroma</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Aroma Cafetería Artesanal</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Menú</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="bienvenida">
+            <h2>Bienvenido</h2>
+            <p>Disfruta el verdadero sabor del café artesanal en un ambiente cálido, natural y relajado.</p>
+            <button id="colorBtn">Cambiar color de fondo</button>
+        </section>
+        <section class="destacados">
+            <h2>Nuestros Destacados</h2>
+            <ul>
+                <li>Café de origen 100% mexicano</li>
+                <li>Panadería artesanal</li>
+                <li>Bebidas especiales de temporada</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Aroma Cafetería Artesanal. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+style.css
+css
+body {
+    background-color: #F5EFE6;
+    color: #5A3A1B;
+    font-family: 'Bitter', serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #5A3A1B;
+    color: #FFF;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #F5EFE6;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: #A3A847;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(90,58,27,0.06);
+}
+
+.bienvenida {
+    text-align: center;
+}
+
+.bienvenida button {
+    background-color: #A3A847;
+    color: #FFF;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    margin-top: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.bienvenida button:hover {
+    background-color: #5A3A1B;
+}
+
+.destacados ul {
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #5A3A1B;
+    color: #FFF;
+    text-align: center;
+    padding: 0.8rem 0;
+    margin-top: 2rem;
+    letter-spacing: 1px;
+}
+script.js
+javascript
+const colorBtn = document.getElementById('colorBtn');
+const colores = ["#F5EFE6", "#A3A847", "#FFF", "#E7CBA9", "#FFD9B7"];
+let indice = 1;
+
+colorBtn.addEventListener('click', function() {
+    document.body.style.backgroundColor = colores[indice];
+    indice = (indice + 1) % colores.length;
+});
+Explicación de la Interacción en JavaScript
+Al hacer clic en el botón “Cambiar color de fondo”, el color del fondo de la página irá alternando entre cinco diferentes tonos suaves y cálidos, apropiados para una cafetería artesanal.
+
+Esto se logra seleccionando el botón por su ID (colorBtn), definiendo un arreglo de colores, y cambiando el color de fondo de body cada vez que se hace clic.
+
+Cómo abrir el proyecto en un navegador
+Crea una carpeta llamada cafeteria-artesanal.
+
+Guarda cada código provisto arriba en su respectivo archivo dentro de esa carpeta:
+
+index.html
+
+style.css
+
+script.js
+
+Abre el archivo index.html con doble clic o clic derecho y seleccionando "Abrir con" → tu navegador web preferido.
+
+Asegúrate de que los tres archivos estén juntos en la misma carpeta para que se vinculen correctamente.
+
+Esta estructura modular y sencilla permite personalizar la web fácilmente y es ideal para proyectos pequeños o demostraciones.
